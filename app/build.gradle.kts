@@ -69,10 +69,10 @@ android {
 }
 
 dependencies {
-    implementation("androidx.appcompat:appcompat:1.0.2")
+    implementation("androidx.appcompat:appcompat:1.1.0-alpha05")
     implementation("androidx.recyclerview:recyclerview:1.0.0")
     implementation("androidx.cardview:cardview:1.0.0")
-    implementation("com.google.android.material:material:1.0.0")
+    implementation("com.google.android.material:material:1.1.0-alpha07")
     implementation("androidx.annotation:annotation:1.0.2")
     implementation("org.sufficientlysecure:openpgp-api:12.0")
     implementation("org.eclipse.jgit:org.eclipse.jgit:3.7.1.201504261725-r") {

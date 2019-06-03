@@ -23,9 +23,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.os.BuildCompat;
 import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -106,6 +108,11 @@ public class PasswordStore extends AppCompatActivity {
     @Override
     @SuppressLint("NewApi")
     protected void onCreate(Bundle savedInstanceState) {
+        if (BuildCompat.isAtLeastQ()) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY);
+        }
         settings = PreferenceManager.getDefaultSharedPreferences(this.getApplicationContext());
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
             shortcutManager = getSystemService(ShortcutManager.class);
@@ -607,7 +614,6 @@ public class PasswordStore extends AppCompatActivity {
 
     protected void onActivityResult(int requestCode, int resultCode,
                                     Intent data) {
-
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 case GitActivity.REQUEST_CLONE:
@@ -638,6 +644,7 @@ public class PasswordStore extends AppCompatActivity {
                     refreshListAdapter();
                     break;
                 case GitActivity.REQUEST_INIT:
+                case NEW_REPO_BUTTON:
                     initializeRepositoryInfo();
                     break;
                 case GitActivity.REQUEST_SYNC:
@@ -646,9 +653,6 @@ public class PasswordStore extends AppCompatActivity {
                     break;
                 case HOME:
                     checkLocalRepository();
-                    break;
-                case NEW_REPO_BUTTON:
-                    initializeRepositoryInfo();
                     break;
                 case CLONE_REPO_BUTTON:
                     // duplicate code
@@ -729,6 +733,7 @@ public class PasswordStore extends AppCompatActivity {
                     break;
             }
         }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     private void initRepository(final int operation) {
