@@ -10,12 +10,12 @@ plugins {
 
 val buildTypeRelease = "release"
 android {
-    compileSdkVersion(28)
+    compileSdkVersion(29)
 
     defaultConfig {
         applicationId = "com.zeapo.pwdstore"
         minSdkVersion(21)
-        targetSdkVersion(28)
+        targetSdkVersion(29)
         versionCode = 10302
         versionName = "1.3.2"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -69,11 +69,11 @@ android {
 }
 
 dependencies {
-    implementation("androidx.appcompat:appcompat:1.1.0-alpha05")
+    implementation("androidx.appcompat:appcompat:1.1.0-beta01")
     implementation("androidx.recyclerview:recyclerview:1.0.0")
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("com.google.android.material:material:1.1.0-alpha07")
-    implementation("androidx.annotation:annotation:1.0.2")
+    implementation("androidx.annotation:annotation:1.1.0")
     implementation("org.sufficientlysecure:openpgp-api:12.0")
     implementation("org.eclipse.jgit:org.eclipse.jgit:3.7.1.201504261725-r") {
         exclude(group = "org.apache.httpcomponents", module = "httpclient")
