@@ -1,4 +1,4 @@
-import org.gradle.api.JavaVersion.*
+import org.gradle.api.JavaVersion.VERSION_1_8
 import org.jetbrains.kotlin.config.KotlinCompilerVersion
 
 plugins {
@@ -72,6 +72,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.1.0-beta01")
     implementation("androidx.recyclerview:recyclerview:1.0.0")
     implementation("androidx.cardview:cardview:1.0.0")
+    implementation("androidx.preference:preference:1.1.0-beta01")
     implementation("com.google.android.material:material:1.1.0-alpha07")
     implementation("androidx.annotation:annotation:1.1.0")
     implementation("org.sufficientlysecure:openpgp-api:12.0")
