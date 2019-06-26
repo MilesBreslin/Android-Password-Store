@@ -21,12 +21,12 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
-import androidx.appcompat.widget.AppCompatTextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -109,7 +109,8 @@ public class SshKeyGen extends AppCompatActivity {
 
     // Displays the generated public key .ssh_key.pub
     public static class ShowSshKeyFragment extends DialogFragment {
-        public ShowSshKeyFragment() { }
+        public ShowSshKeyFragment() {
+        }
 
         @NonNull
         @Override

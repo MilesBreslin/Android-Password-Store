@@ -44,6 +44,7 @@ public class SshApiSessionFactory extends GitConfigSessionFactory {
     public static final int POST_SIGNATURE = 301;
     private String username;
     private Identity identity;
+
     public SshApiSessionFactory(String username, Identity identity) {
         this.username = username;
         this.identity = identity;
@@ -206,7 +207,7 @@ public class SshApiSessionFactory extends GitConfigSessionFactory {
                     public void onError() {
                         new MaterialAlertDialogBuilder(callingActivity, R.style.AppTheme_Dialog)
                                 .setMessage(callingActivity.getString(
-                                R.string.openkeychain_ssh_api_connect_fail)).show();
+                                        R.string.openkeychain_ssh_api_connect_fail)).show();
                     }
                 });
 
